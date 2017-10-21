@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>youtube api</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style>
+.inline-block {
+	display: inline-block;
+}
+.button {
+   vertical-align: top;
+    display: inline-block;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    background-color: blue;
+    border: none;
+    width: 15%;
+    border-radius: 4px;
+    padding: 1%;
+    cursor: pointer;
+}
+.main_controller {
+	width:100%;
+	background: #f1f1f1;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>youtube api</h1>
+<div class="inline-block">
+	<div id="sample1" class="ytPlayer1"></div><br>
+	<div>
+		url : <input type="text" value="">
+		<span class="button" id="set1">set</span>
+	</div>
+	<span id="start1">start</span>
+	<span id="stop1">stop</span>
+</div>
+<div class="inline-block">
+	<div id="sample2" class="ytPlayer2"></div><br>
+	<div>
+		url : <input type="text" value="">
+		<span class="button" id="set2">set</span>
+	</div>
+	<span id="start2">start</span>
+	<span id="stop2">stop</span>
+</div>
+<div class="inline-block">
+	<div id="sample3" class="ytPlayer3"></div><br>
+	<div>
+		url : <input type="text" value="">
+		<span class="button" id="set3">set</span>
+	</div>
+	<span id="start3">start</span>
+	<span id="stop3">stop</span>
+</div>
+<div class="inline-block">
+	<div id="sample4" class="ytPlayer4"></div><br>
+	<div>
+		url : <input type="text" value="">
+		<span class="button" id="set4">set</span>
+	</div>
+	<span id="start4">start</span>
+	<span id="stop4">stop</span>
+</div>
+
+<!-- <button id="play">再生</button>
+<button id="pause">一時停止</button>
+<button id="prev">1分前へ</button>
+<button id="next">1分先へ</button>
+<button id="volup">音量アップ</button>
+<button id="voldown">音量ダウン</button>
+<button id="mute">ミュート</button> -->
+<div class="main_controller" >
+<span id="all_start">start</span>
+<span id="all_pouse">pouse</span>
+</div>
+
+<div class="digg">
+<a href="https://www.youtube.com/" target="_blank">digg</a>
+</div>
+<script src="js/sample.js"></script>
+
+</body>
+</html>
+

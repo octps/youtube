@@ -55,12 +55,14 @@ function onYouTubeIframeAPIReady() {
           height: 169, // プレーヤーの高さ
           videoId: movieDefalut[0], // YouTubeのID
   		    events: {
-               'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
+                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
                 'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
            },
            playerVars: {
-               rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-               autoplay: 0 // 自動再生するかどうか設定
+                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
+                autoplay: 0 // 自動再生するかどうか設定
+                controls: 0, // コントロールバーを表示しない
+                showinfo: 0 // 動画情報を表示しない
            }
       }
    );
@@ -72,12 +74,14 @@ function onYouTubeIframeAPIReady() {
           height: 169, // プレーヤーの高さ
           videoId: movieDefalut[1], // YouTubeのID
   		    events: {
-               'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
+                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
                 'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
            },
            playerVars: {
-               rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-               autoplay: 0 // 自動再生するかどうか設定
+                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
+                autoplay: 0 // 自動再生するかどうか設定
+                controls: 0, // コントロールバーを表示しない
+                showinfo: 0 // 動画情報を表示しない
            }
       }
    );
@@ -89,12 +93,14 @@ function onYouTubeIframeAPIReady() {
           height: 169, // プレーヤーの高さ
           videoId: movieDefalut[2], // YouTubeのID
 		      events: {
-               'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
+                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
                 'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
            },
           playerVars: {
-               rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-               autoplay: 0 // 自動再生するかどうか設定
+                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
+                autoplay: 0 // 自動再生するかどうか設定
+                controls: 0, // コントロールバーを表示しない
+                showinfo: 0 // 動画情報を表示しない
            }
       }
    );
@@ -106,12 +112,14 @@ function onYouTubeIframeAPIReady() {
           height: 169, // プレーヤーの高さ
           videoId: movieDefalut[3], // YouTubeのID
 		      events: {
-               'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
+                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
                 'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
            },
           playerVars: {
-               rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-               autoplay: 0 // 自動再生するかどうか設定
+                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
+                autoplay: 0 // 自動再生するかどうか設定
+                controls: 0, // コントロールバーを表示しない
+                showinfo: 0 // 動画情報を表示しない
           }
       }
    );

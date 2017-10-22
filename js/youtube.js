@@ -49,7 +49,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // YouTubeの埋め込み
 function onYouTubeIframeAPIReady() {
   ytPlayer[1] = new YT.Player(
-       'sample1', // 埋め込む場所の指定
+       'player1', // 埋め込む場所の指定
         {
           width: 300, // プレーヤーの幅
           height: 169, // プレーヤーの高さ
@@ -60,7 +60,7 @@ function onYouTubeIframeAPIReady() {
            },
            playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0 // 自動再生するかどうか設定
+                autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
            }
@@ -68,7 +68,7 @@ function onYouTubeIframeAPIReady() {
    );
 
   ytPlayer[2] = new YT.Player(
-       'sample2', // 埋め込む場所の指定
+       'player2', // 埋め込む場所の指定
         {
           width: 300, // プレーヤーの幅
           height: 169, // プレーヤーの高さ
@@ -79,7 +79,7 @@ function onYouTubeIframeAPIReady() {
            },
            playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0 // 自動再生するかどうか設定
+                autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
            }
@@ -87,7 +87,7 @@ function onYouTubeIframeAPIReady() {
    );
 
   ytPlayer[3] = new YT.Player(
-       'sample3', // 埋め込む場所の指定
+       'player3', // 埋め込む場所の指定
         {
           width: 300, // プレーヤーの幅
           height: 169, // プレーヤーの高さ
@@ -98,7 +98,7 @@ function onYouTubeIframeAPIReady() {
            },
           playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0 // 自動再生するかどうか設定
+                autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
            }
@@ -106,7 +106,7 @@ function onYouTubeIframeAPIReady() {
    );
 
   ytPlayer[4] = new YT.Player(
-       'sample4', // 埋め込む場所の指定
+       'player4', // 埋め込む場所の指定
         {
           width: 300, // プレーヤーの幅
           height: 169, // プレーヤーの高さ
@@ -117,7 +117,7 @@ function onYouTubeIframeAPIReady() {
            },
           playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0 // 自動再生するかどうか設定
+                autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
           }

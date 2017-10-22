@@ -3,35 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <title>youtube api</title>
+<link rel='stylesheet' href='/css/index.css' type='text/css' media='all' />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<style>
-.inline-block {
-	display: inline-block;
-}
-.button {
-   vertical-align: top;
-    display: inline-block;
-    font-size: 1rem;
-    color: #fff;
-    text-align: center;
-    background-color: blue;
-    border: none;
-    width: 15%;
-    border-radius: 4px;
-    padding: 1%;
-    cursor: pointer;
-}
-.main_controller {
-	width:100%;
-	background: #f1f1f1;
-	text-align: center;
-}
-</style>
 </head>
 <body>
 <h1>youtube api</h1>
 <div class="inline-block">
-	<div id="sample1" class="ytPlayer1"></div><br>
+	<div id="player1" class="ytPlayer1"></div><br>
 	<div>
 		url : <input type="text" value="">
 		<span class="button" id="set1">set</span>
@@ -40,7 +18,7 @@
 	<span id="stop1">stop</span>
 </div>
 <div class="inline-block">
-	<div id="sample2" class="ytPlayer2"></div><br>
+	<div id="player2" class="ytPlayer2"></div><br>
 	<div>
 		url : <input type="text" value="">
 		<span class="button" id="set2">set</span>
@@ -49,7 +27,7 @@
 	<span id="stop2">stop</span>
 </div>
 <div class="inline-block">
-	<div id="sample3" class="ytPlayer3"></div><br>
+	<div id="player3" class="ytPlayer3"></div><br>
 	<div>
 		url : <input type="text" value="">
 		<span class="button" id="set3">set</span>
@@ -58,7 +36,7 @@
 	<span id="stop3">stop</span>
 </div>
 <div class="inline-block">
-	<div id="sample4" class="ytPlayer4"></div><br>
+	<div id="player4" class="ytPlayer4"></div><br>
 	<div>
 		url : <input type="text" value="">
 		<span class="button" id="set4">set</span>
@@ -82,7 +60,7 @@
 <div class="digg">
 <a href="https://www.youtube.com/" target="_blank">digg</a>
 </div>
-<script src="js/sample.js"></script>
+<script src="/js/youtube.js"></script>
 
 </body>
 </html>

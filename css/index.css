@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.inline-block {
+	display: inline-block;
+}
+
+.button {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    background-color: blue;
+    border: none;
+    width: 15%;
+    border-radius: 4px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.main_controller {
+	width:100%;
+	background: #f1f1f1;
+	text-align: center;
+}

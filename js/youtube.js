@@ -49,7 +49,7 @@ function onYouTubeIframeAPIReady() {
            playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
                 autoplay: 0, // 自動再生するかどうか設定
-                controls: 0, // コントロールバーを表示しない
+                // controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
            }
       }
@@ -116,7 +116,7 @@ function onYouTubeIframeAPIReady() {
 
 $(function() {
 
-   //全体のコントローラー start stop
+   //個別のコントローラー start stop
    $('#start1').click(function() {
           ytPlayer[1].playVideo();
        }
@@ -226,6 +226,29 @@ $(function() {
       window.pintime4 = null;
       $("#break4").html("pin");
    });
+
+   //個別のコントローラー speed
+   $('#range1').change(function(e) {
+          var val = $(e['currentTarget']).val();
+          ytPlayer[1].setPlaybackRate(val);          
+        }
+   );
+   $('#range2').change(function(e) {
+          var val = $(e['currentTarget']).val();
+          ytPlayer[2].setPlaybackRate(val);          
+        }
+   );
+   $('#range3').change(function(e) {
+          var val = $(e['currentTarget']).val();
+          ytPlayer[3].setPlaybackRate(val);          
+        }
+   );
+   $('#range4').change(function(e) {
+          var val = $(e['currentTarget']).val();
+          ytPlayer[4].setPlaybackRate(val);          
+        }
+   );
+
 
 
    //全体のコントローラー

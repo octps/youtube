@@ -12,11 +12,11 @@
     text-align: center;
     background-color: blue;
     border: none;
-    width: 15%;
     border-radius: 4px;
     padding: 1%;
     cursor: pointer;
 }
+
 
 .main_controller {
 	width:100%;

@@ -24,21 +24,9 @@ function setMovie(number) {
     ytPlayer[intNumber].cueVideoById(movieDefalut[number]);
 }
 
-
-$(function() {
-   $('#set1').click(function(e) {
-      setMovieData(0,e['currentTarget']);
-   });
-   $('#set2').click(function(e) {
-      setMovieData(1,e['currentTarget']);
-   });
-   $('#set3').click(function(e) {
-      setMovieData(2,e['currentTarget']);
-   });
-   $('#set4').click(function(e) {
-      setMovieData(3,e['currentTarget']);
-   });
- });
+function mySeekTo(sec) {
+    player.seekTo(sec,true);
+}
 
 
 var tag = document.createElement('script');
@@ -127,6 +115,8 @@ function onYouTubeIframeAPIReady() {
 }
 
 $(function() {
+
+   //全体のコントローラー start stop
    $('#start1').click(function() {
           ytPlayer[1].playVideo();
        }
@@ -161,6 +151,84 @@ $(function() {
        }
    );
 
+   //個別のコントローラー set
+   $('#set1').click(function(e) {
+      setMovieData(0,e['currentTarget']);
+   });
+   $('#set2').click(function(e) {
+      setMovieData(1,e['currentTarget']);
+   });
+   $('#set3').click(function(e) {
+      setMovieData(2,e['currentTarget']);
+   });
+   $('#set4').click(function(e) {
+      setMovieData(3,e['currentTarget']);
+   });
+
+
+   //個別のコントローラー seek
+   window.pintime1 = null;
+   $('#break1').click(function(e) {
+      if (window.pintime1 == null) {
+        window.pintime1 = ytPlayer[1].getCurrentTime();
+        $("#break1").html("back");
+        return;
+      }
+      ytPlayer[1].seekTo(parseFloat(window.pintime1),true);
+
+   });
+   $('#clearpin1').click(function(e) {
+      window.pintime1 = null;
+      $("#break1").html("pin");
+   });
+
+   window.pintime2 = null;
+   $('#break2').click(function(e) {
+      if (window.pintime2 == null) {
+        window.pintime2 = ytPlayer[2].getCurrentTime();
+        $("#break2").html("back");
+        return;
+      }
+      ytPlayer[2].seekTo(parseFloat(window.pintime2),true);
+
+   });
+   $('#clearpin2').click(function(e) {
+      window.pintime2 = null;
+      $("#break2").html("pin");
+   });
+
+   window.pintime13 = null;
+   $('#break3').click(function(e) {
+      if (window.pintime3 == null) {
+        window.pintime3 = ytPlayer[3].getCurrentTime();
+        $("#break3").html("back");
+        return;
+      }
+      ytPlayer[3].seekTo(parseFloat(window.pintime3),true);
+
+   });
+   $('#clearpin3').click(function(e) {
+      window.pintime3 = null;
+      $("#break3").html("pin");
+   });
+
+   window.pintime4 = null;
+   $('#break4').click(function(e) {
+      if (window.pintime4 == null) {
+        window.pintime4 = ytPlayer[4].getCurrentTime();
+        $("#break4").html("back");
+        return;
+      }
+      ytPlayer[4].seekTo(parseFloat(window.pintime4),true);
+
+   });
+   $('#clearpin4').click(function(e) {
+      window.pintime4 = null;
+      $("#break4").html("pin");
+   });
+
+
+   //全体のコントローラー
    $('#all_start').click(function() {
             ytPlayer[1].playVideo();
             ytPlayer[2].playVideo();
@@ -176,6 +244,7 @@ $(function() {
             ytPlayer[4].pauseVideo();
        }
    );
+
 
  });
 

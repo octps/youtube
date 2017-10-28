@@ -1,13 +1,11 @@
 var movieDefalut = [
   'Nsct-e-HVE0',
   'l_RfediFJFQ',
-  'DmCmW1EYuo0',
-  'cRKhrD-MuW4'
 ]
 
 var ytPlayer = {};
 
-var movieCount = 5;
+var movieCount = 3;
 
 function setMovieData (number,target) {
   var block = $(target.parentNode);
@@ -74,43 +72,6 @@ function onYouTubeIframeAPIReady() {
       }
    );
 
-  ytPlayer[3] = new YT.Player(
-       'player3', // 埋め込む場所の指定
-        {
-          width: 300, // プレーヤーの幅
-          height: 169, // プレーヤーの高さ
-          videoId: movieDefalut[2], // YouTubeのID
-		      events: {
-                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
-                'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
-           },
-          playerVars: {
-                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0, // 自動再生するかどうか設定
-                controls: 0, // コントロールバーを表示しない
-                showinfo: 0 // 動画情報を表示しない
-           }
-      }
-   );
-
-  ytPlayer[4] = new YT.Player(
-       'player4', // 埋め込む場所の指定
-        {
-          width: 300, // プレーヤーの幅
-          height: 169, // プレーヤーの高さ
-          videoId: movieDefalut[3], // YouTubeのID
-		      events: {
-                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
-                'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
-           },
-          playerVars: {
-                rel: 0, // 再生終了後に関連動画を表示するかどうか設定
-                autoplay: 0, // 自動再生するかどうか設定
-                controls: 0, // コントロールバーを表示しない
-                showinfo: 0 // 動画情報を表示しない
-          }
-      }
-   );
 
 }
 
@@ -125,14 +86,6 @@ $(function() {
            ytPlayer[2].playVideo();
        }
    );
-   $('#start3').click(function() {
-           ytPlayer[3].playVideo();
-       }
-   );
-   $('#start4').click(function() {
-           ytPlayer[4].playVideo();
-       }
-   );
 
    $('#stop1').click(function() {
           ytPlayer[1].pauseVideo();
@@ -142,14 +95,6 @@ $(function() {
            ytPlayer[2].pauseVideo();
        }
    );
-   $('#stop3').click(function() {
-           ytPlayer[3].pauseVideo();
-       }
-   );
-   $('#stop4').click(function() {
-           ytPlayer[4].pauseVideo();
-       }
-   );
 
    //個別のコントローラー set
    $('#set1').click(function(e) {
@@ -157,12 +102,6 @@ $(function() {
    });
    $('#set2').click(function(e) {
       setMovieData(1,e['currentTarget']);
-   });
-   $('#set3').click(function(e) {
-      setMovieData(2,e['currentTarget']);
-   });
-   $('#set4').click(function(e) {
-      setMovieData(3,e['currentTarget']);
    });
 
 
@@ -197,35 +136,6 @@ $(function() {
       $("#break2").html("pin");
    });
 
-   window.pintime13 = null;
-   $('#break3').click(function(e) {
-      if (window.pintime3 == null) {
-        window.pintime3 = ytPlayer[3].getCurrentTime();
-        $("#break3").html("back");
-        return;
-      }
-      ytPlayer[3].seekTo(parseFloat(window.pintime3),true);
-
-   });
-   $('#clearpin3').click(function(e) {
-      window.pintime3 = null;
-      $("#break3").html("pin");
-   });
-
-   window.pintime4 = null;
-   $('#break4').click(function(e) {
-      if (window.pintime4 == null) {
-        window.pintime4 = ytPlayer[4].getCurrentTime();
-        $("#break4").html("back");
-        return;
-      }
-      ytPlayer[4].seekTo(parseFloat(window.pintime4),true);
-
-   });
-   $('#clearpin4').click(function(e) {
-      window.pintime4 = null;
-      $("#break4").html("pin");
-   });
 
    //個別のコントローラー speed
    $('#range1').change(function(e) {
@@ -238,33 +148,18 @@ $(function() {
           ytPlayer[2].setPlaybackRate(val);          
         }
    );
-   $('#range3').change(function(e) {
-          var val = $(e['currentTarget']).val();
-          ytPlayer[3].setPlaybackRate(val);          
-        }
-   );
-   $('#range4').change(function(e) {
-          var val = $(e['currentTarget']).val();
-          ytPlayer[4].setPlaybackRate(val);          
-        }
-   );
-
 
 
    //全体のコントローラー
    $('#all_start').click(function() {
             ytPlayer[1].playVideo();
             ytPlayer[2].playVideo();
-            ytPlayer[3].playVideo();
-            ytPlayer[4].playVideo();
        }
    );
 
    $('#all_pouse').click(function() {
             ytPlayer[1].pauseVideo();
             ytPlayer[2].pauseVideo();
-            ytPlayer[3].pauseVideo();
-            ytPlayer[4].pauseVideo();
        }
    );
 
@@ -345,7 +240,7 @@ $(function() {
 
 var playerReady = false;
 var conunt = 0;
-var movieCount = 4;
+var movieCount = 2;
 function onPlayerReady(event) {
 	conunt += 1;
 	if(movieCount == conunt) {

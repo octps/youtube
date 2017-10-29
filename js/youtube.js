@@ -1,6 +1,6 @@
 var movieDefalut = [
   'HTE8z7PIyug',
-  'nKm_wA-WdI4',
+  'VyzqHFdzBKg',
 ];
 
 var ytPlayer = {};
@@ -52,7 +52,7 @@ function onYouTubeIframeAPIReady() {
            playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
                 autoplay: 0, // 自動再生するかどうか設定
-                // controls: 0, // コントロールバーを表示しない
+                controls: 0, // コントロールバーを表示しない
                 showinfo: 0 // 動画情報を表示しない
            }
       }
@@ -111,35 +111,41 @@ $(function() {
 
 
    //個別のコントローラー seek
-   window.pintime1 = null;
+  window.pintime1 = null;
    $('#break1').click(function(e) {
-      if (window.pintime1 == null) {
-        window.pintime1 = ytPlayer[1].getCurrentTime();
-        $("#break1").html("back");
-        return;
-      }
-      ytPlayer[1].seekTo(parseFloat(window.pintime1),true);
-
-   });
-   $('#clearpin1').click(function(e) {
+      window.seek1();
+  });
+  $('#clearpin1').click(function(e) {
       window.pintime1 = null;
       $("#break1").html("pin");
-   });
+  });
 
-   window.pintime2 = null;
-   $('#break2').click(function(e) {
-      if (window.pintime2 == null) {
-        window.pintime2 = ytPlayer[2].getCurrentTime();
-        $("#break2").html("back");
-        return;
-      }
-      ytPlayer[2].seekTo(parseFloat(window.pintime2),true);
+  window.seek1 = function() {
+    if (window.pintime1 == null) {
+      window.pintime1 = ytPlayer[1].getCurrentTime();
+      $("#break1").html("back [ j ]key");
+      return;
+    }
+    ytPlayer[1].seekTo(parseFloat(window.pintime1),true);
+  }
 
-   });
-   $('#clearpin2').click(function(e) {
+  window.pintime2 = null;
+  $('#break2').click(function(e) {
+      window.seek2();
+  });
+  $('#clearpin2').click(function(e) {
       window.pintime2 = null;
       $("#break2").html("pin");
-   });
+  });
+
+  window.seek2 = function() {
+    if (window.pintime2 == null) {
+      window.pintime2 = ytPlayer[2].getCurrentTime();
+      $("#break2").html("back [ f ]key");
+      return;
+    }
+    ytPlayer[2].seekTo(parseFloat(window.pintime2),true);
+  }
 
 
    //個別のコントローラー speed
@@ -211,6 +217,19 @@ $(function() {
       ytPlayer[1].setVolume(volume);
     }
   });
+
+  // key操作
+  $(document).on('keydown',function(e) {
+    if (e.keyCode == "70") {
+      window.seek1();
+      // console.log("f");
+    }
+    if (e.keyCode == "74") {
+      window.seek2();
+      // console.log("j");
+    }
+  });
+
 
  });
 

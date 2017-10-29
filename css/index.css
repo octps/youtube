@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width:auto;
+    text-align: center;
+}
 .inline-block {
 	display: inline-block;
 }
@@ -10,16 +19,45 @@
     font-size: 1rem;
     color: #fff;
     text-align: center;
-    background-color: blue;
+    background-color: black;
     border: none;
     border-radius: 4px;
     padding: 1%;
     cursor: pointer;
 }
 
+.part {
+    background-color: blue;
+}
 
 .main_controller {
 	width:100%;
 	background: #f1f1f1;
 	text-align: center;
+    padding: 5px 0;
+}
+
+h2,
+h3 {
+    margin: 10px 0 5px;
+}
+
+h1,
+p {
+    margin: 0;
+}
+
+header {
+    margin: 0 0 5px;
+    padding: 0 0 5px;
+    text-align: center;
+}
+
+footer {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.controller div {
+    margin: 3% 0;
 }

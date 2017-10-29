@@ -1,54 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>youtube api</title>
+<title>youtube mixer</title>
 <link rel='stylesheet' href='/css/index.css' type='text/css' media='all' />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>youtube api</h1>
-<div class="inline-block">
-	<div id="player1" class="ytPlayer1"></div><br>
-	<div>
-		url : <input type="text" value="">
-		<span class="button" id="set1">set</span>
+<header>
+	<h1>youtube mixer</h1>
+	<p>Everything is on youtube.</p>
+</header>
+<div class="main">
+	<div class="inline-block">
+		<div id="player1" class="ytPlayer1"></div>
+		<div class="controller">
+			<div>
+				youtube movie url : <input type="text" value="">
+				<span class="button" id="set1">set</span>
+			</div>
+			<div>
+				<span class="button" id="start1">start</span>
+				<span class="button" id="stop1">pouse</span>
+			</div>
+			<div>
+				<span class="button" id="break1">pin</span>
+				<span class="button" id="clearpin1">clear pin</span>
+			</div>
+			<div>
+				speed : <input type="range" id="range1" min="0.25" max="2" step="0.25" value="1">
+			</div>
+		<!-- 	<div>
+				volume : <input type="range" id="volume1" min="0" max="100" step="0" value="100">
+			</div> -->
+		</div>
 	</div>
-	<div>
-		<span id="start1">start</span>
-		<span id="stop1">pouse</span>
+	<div class="inline-block">
+		<div id="player2" class="ytPlayer2"></div>
+		<div class="controller">
+			<div>
+				youtube movie url : <input type="text" value="">
+				<span class="button" id="set2">set</span>
+			</div>
+			<div>
+				<span class="button" id="start2">start</span>
+				<span class="button" id="stop2">pouse</span>
+			</div>
+			<div>
+				<span class="button" id="break2">pin</span>
+				<span class="button" id="clearpin2">clear pin</span>
+			</div>
+			<div>
+				speed : <input type="range" id="range2" min="0.25" max="2" step="0.25" value="1">
+			</div>
+		<!-- 	<div>
+				volume : <input type="range" id="volume2" min="0" max="100" step="0" value="100">
+			</div> -->
+		</div>
 	</div>
-	<div>
-		<span class="button" id="break1">pin</span>
-		<span class="button" id="clearpin1">clear pin</span>
-	</div>
-	<div>
-		speed : <input type="range" id="range1" min="0.25" max="2" step="0.25" value="1">
-	</div>
-<!-- 	<div>
-		volume : <input type="range" id="volume1" min="0" max="100" step="0" value="100">
-	</div> -->
-</div>
-<div class="inline-block">
-	<div id="player2" class="ytPlayer2"></div><br>
-	<div>
-		url : <input type="text" value="">
-		<span class="button" id="set2">set</span>
-	</div>
-	<div>
-		<span id="start2">start</span>
-		<span id="stop2">pouse</span>
-	</div>
-	<div>
-		<span class="button" id="break2">pin</span>
-		<span class="button" id="clearpin2">clear pin</span>
-	</div>
-	<div>
-		speed : <input type="range" id="range2" min="0.25" max="2" step="0.25" value="1">
-	</div>
-<!-- 	<div>
-		volume : <input type="range" id="volume2" min="0" max="100" step="0" value="100">
-	</div> -->
 </div>
 
 <!-- <button id="play">再生</button>
@@ -59,16 +68,18 @@
 <button id="voldown">音量ダウン</button>
 <button id="mute">ミュート</button> -->
 <div class="main_controller" >
-	<span id="all_start">start</span>
-	<span id="all_pouse">pouse</span>
+	<h2>main controller</h2>
+	<span class="button part" id="all_start">start</span>
+	<span class="button part" id="all_pouse">pouse</span>
 	<div>
+		<h3>crossfader</h3>
 		<input type="range" id="crossfader" min="-100" max="100" step="0" value="0">
 	</div>
 </div>
+<footer>
+	<a href="https://www.youtube.com/" target="_blank">digg</a>
+</footer>
 
-<div class="digg">
-<a href="https://www.youtube.com/" target="_blank">digg</a>
-</div>
 <script src="/js/youtube.js"></script>
 
 </body>

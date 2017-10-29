@@ -1,7 +1,7 @@
 var movieDefalut = [
-  'jhOVibLEDhA',
-  'h1Kdd9Tl53A',
-]
+  'HTE8z7PIyug',
+  'nKm_wA-WdI4',
+];
 
 var ytPlayer = {};
 
@@ -20,6 +20,7 @@ function setMovie(number) {
     var movieNumber = movieDefalut[number];
     var intNumber = parseInt(number) + 1;
     ytPlayer[intNumber].cueVideoById(movieDefalut[number]);
+    ytPlayer[intNumber].playVideo();
 }
 
 function mySeekTo(sec) {

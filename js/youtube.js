@@ -1,6 +1,6 @@
 var movieDefalut = [
-  'Nsct-e-HVE0',
-  'l_RfediFJFQ',
+  'jhOVibLEDhA',
+  'h1Kdd9Tl53A',
 ]
 
 var ytPlayer = {};
@@ -32,13 +32,17 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+window.player = {};
+window.player.width = 480;
+window.player.height = 240;
+
 // YouTubeの埋め込み
 function onYouTubeIframeAPIReady() {
   ytPlayer[1] = new YT.Player(
        'player1', // 埋め込む場所の指定
         {
-          width: 300, // プレーヤーの幅
-          height: 169, // プレーヤーの高さ
+          width: window.player.width, // プレーヤーの幅
+          height: window.player.height, // プレーヤーの高さ
           videoId: movieDefalut[0], // YouTubeのID
   		    events: {
                 'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
@@ -56,8 +60,8 @@ function onYouTubeIframeAPIReady() {
   ytPlayer[2] = new YT.Player(
        'player2', // 埋め込む場所の指定
         {
-          width: 300, // プレーヤーの幅
-          height: 169, // プレーヤーの高さ
+          width: window.player.width, // プレーヤーの幅
+          height: window.player.height, // プレーヤーの高さ
           videoId: movieDefalut[1], // YouTubeのID
   		    events: {
                 'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
@@ -150,19 +154,62 @@ $(function() {
    );
 
 
-   //全体のコントローラー
-   $('#all_start').click(function() {
+   //個別のコントローラー volume
+  $('#volume1').on( 'input', function (e) {
+        var val = $(e['currentTarget']).val();
+        ytPlayer[1].setVolume(val);                  
+  } );
+  $('#volume1').change(function(e) {
+        var val = $(e['currentTarget']).val();
+        ytPlayer[1].setVolume(val);          
+      }
+  );
+
+  $('#volume2').on( 'input', function (e) {
+        var val = $(e['currentTarget']).val();
+        ytPlayer[2].setVolume(val);                  
+  } );
+  $('#volume2').change(function(e) {
+        var val = $(e['currentTarget']).val();
+        ytPlayer[2].setVolume(val);          
+      }
+  );
+
+   //全体のコントローラー start stop
+  $('#all_start').click(function() {
             ytPlayer[1].playVideo();
             ytPlayer[2].playVideo();
-       }
-   );
+      }
+  );
 
-   $('#all_pouse').click(function() {
+  $('#all_pouse').click(function() {
             ytPlayer[1].pauseVideo();
             ytPlayer[2].pauseVideo();
-       }
-   );
+      }
+  );
 
+  //全体のコントローラー クロスフェーダー
+  $('#crossfader').on('input',function(e) {
+    var val = $(e['currentTarget']).val();
+    var absVal = Math.abs(val);
+    var volume = 100 - absVal; 
+    console.log(volume);
+    if (val < 0) {
+      ytPlayer[2].setVolume(volume);
+    } else {
+      ytPlayer[1].setVolume(volume);
+    }
+  });
+  $('#crossfader').change(function(e) {
+    var val = $(e['currentTarget']).val();
+    var absVal = Math.abs(val);
+    var volume = 100 - absVal; 
+    if (val < 0) {
+      ytPlayer[2].setVolume(volume);
+    } else {
+      ytPlayer[1].setVolume(volume);
+    }
+  });
 
  });
 

@@ -116,36 +116,47 @@ $(function() {
       window.seek1();
   });
   $('#clearpin1').click(function(e) {
-      window.pintime1 = null;
-      $("#break1").html("pin");
+      window.clearpin1();
   });
 
   window.seek1 = function() {
     if (window.pintime1 == null) {
       window.pintime1 = ytPlayer[1].getCurrentTime();
-      $("#break1").html("back [ f ]key");
+      $("#break1").html("back [ d ]key");
+      $("#clearpin1").html("clear [ f ]key");
       return;
     }
     ytPlayer[1].seekTo(parseFloat(window.pintime1),true);
   }
+  window.clearpin1 = function() {
+      window.pintime1 = null;
+      $("#break1").html("pin");
+      $("#clearpin1").html("clear");
+  };
 
   window.pintime2 = null;
   $('#break2').click(function(e) {
       window.seek2();
   });
   $('#clearpin2').click(function(e) {
-      window.pintime2 = null;
-      $("#break2").html("pin");
+      window.clearpin2();
   });
 
   window.seek2 = function() {
     if (window.pintime2 == null) {
       window.pintime2 = ytPlayer[2].getCurrentTime();
       $("#break2").html("back [ j ]key");
+      $("#clearpin2").html("clear [ k ]key");
       return;
     }
     ytPlayer[2].seekTo(parseFloat(window.pintime2),true);
   }
+  window.clearpin2 = function() { 
+    window.pintime2 = null;
+    $("#break2").html("pin");
+    $("#clearpin2").html("clear");
+  }
+
 
 
    //個別のコントローラー speed
@@ -220,14 +231,27 @@ $(function() {
 
   // key操作
   $(document).on('keydown',function(e) {
-    if (e.keyCode == "70") {
+    if (e.keyCode == "68") {
       window.seek1();
       // console.log("f");
+    }
+    if (e.keyCode == "70") {
+      window.clearpin1();
+      // console.log("d");
+      // console.log("clear d");
     }
     if (e.keyCode == "74") {
       window.seek2();
       // console.log("j");
     }
+    // console.log(e.keyCode)
+    if (e.keyCode == "75") {
+      window.clearpin2();
+      // console.log("k");
+      // console.log("clear k");
+    }
+
+
   });
 
  });
@@ -320,7 +344,6 @@ function onPlayerReady(event) {
   playerReady = true;
   var me = $("#player1").contents().find('".video-stream.html5-main-video"');
   console.log(me);
-
 }
 
 function onPlayerStateChange(event) {

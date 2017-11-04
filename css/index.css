@@ -61,3 +61,7 @@ footer {
 .controller div {
     margin: 3% 0;
 }
+
+label {
+    margin-top: 10px;
+}

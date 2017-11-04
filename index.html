@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <title>youtube mixer</title>
-<link rel='stylesheet' href='/css/index.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/index.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/siimple/siimple.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/siimple/siimple-form.css' type='text/css' media='all' />
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
@@ -11,24 +15,33 @@
 	<h1>youtube mixer</h1>
 	<p>Everything is on youtube.</p>
 </header>
+<div class="main_controller" >
+	<h2>main controller</h2>
+	<span class="siimple-btn siimple-btn--navy part" id="all_start">start</span>
+	<span class="siimple-btn siimple-btn--navy part" id="all_pouse">pouse</span>
+	<div>
+		<h3>crossfader</h3>
+		<input type="range" id="crossfader" min="-100" max="100" step="0" value="0">
+	</div>
+</div>
 <div class="main">
 	<div class="inline-block">
-		<div id="player1" class="ytPlayer1"></div>
+		<div id="player1" class="ytPlayer1 siimple-grid-col siimple-grid-col--12"></div>
 		<div class="controller">
 			<div>
-				youtube movie url : <input type="text" value="">
-				<span class="button" id="set1">set</span>
+				<label class="siimple-label">youtube movie url : <input  class="siimple-input" type="text" value=""></label>
+				<span class="siimple-btn siimple-btn--navy" id="set1">set</span>
 			</div>
 			<div>
-				<span class="button" id="start1">start</span>
-				<span class="button" id="stop1">pouse</span>
+				<span class="siimple-btn siimple-btn--navy" id="start1">start</span>
+				<span class="siimple-btn siimple-btn--navy" id="stop1">pouse</span>
 			</div>
 			<div>
-				<span class="button" id="break1">pin</span>
-				<span class="button" id="clearpin1">clear pin</span>
+				<span class="siimple-btn siimple-btn--navy" id="break1">pin</span>
+				<span class="siimple-btn siimple-btn--navy" id="clearpin1">clear pin</span>
 			</div>
 			<div>
-				speed : <input type="range" id="range1" min="0.25" max="2" step="0.25" value="1">
+				<label class="siimple-label">speed : <input type="range" id="range1" min="0.25" max="2" step="0.25" value="1"></label>
 			</div>
 		<!-- 	<div>
 				volume : <input type="range" id="volume1" min="0" max="100" step="0" value="100">
@@ -36,22 +49,22 @@
 		</div>
 	</div>
 	<div class="inline-block">
-		<div id="player2" class="ytPlayer2"></div>
+		<div id="player2" class="ytPlayer2 siimple-grid-col siimple-grid-col--12"></div>
 		<div class="controller">
 			<div>
-				youtube movie url : <input type="text" value="">
-				<span class="button" id="set2">set</span>
+				<label class="siimple-label">youtube movie url : <input class="siimple-input" type="text" value=""></label>
+				<span class="siimple-btn siimple-btn--navy" id="set2">set</span>
 			</div>
 			<div>
-				<span class="button" id="start2">start</span>
-				<span class="button" id="stop2">pouse</span>
+				<span class="siimple-btn siimple-btn--navy" id="start2">start</span>
+				<span class="siimple-btn siimple-btn--navy" id="stop2">pouse</span>
 			</div>
 			<div>
-				<span class="button" id="break2">pin</span>
-				<span class="button" id="clearpin2">clear pin</span>
+				<span class="siimple-btn siimple-btn--navy" id="break2">pin</span>
+				<span class="siimple-btn siimple-btn--navy" id="clearpin2">clear pin</span>
 			</div>
 			<div>
-				speed : <input type="range" id="range2" min="0.25" max="2" step="0.25" value="1">
+				<label class="siimple-label">speed : <input type="range" id="range2" min="0.25" max="2" step="0.25" value="1"></label>
 			</div>
 		<!-- 	<div>
 				volume : <input type="range" id="volume2" min="0" max="100" step="0" value="100">
@@ -60,27 +73,11 @@
 	</div>
 </div>
 
-<!-- <button id="play">再生</button>
-<button id="pause">一時停止</button>
-<button id="prev">1分前へ</button>
-<button id="next">1分先へ</button>
-<button id="volup">音量アップ</button>
-<button id="voldown">音量ダウン</button>
-<button id="mute">ミュート</button> -->
-<div class="main_controller" >
-	<h2>main controller</h2>
-	<span class="button part" id="all_start">start</span>
-	<span class="button part" id="all_pouse">pouse</span>
-	<div>
-		<h3>crossfader</h3>
-		<input type="range" id="crossfader" min="-100" max="100" step="0" value="0">
-	</div>
-</div>
 <footer>
 	<a href="https://www.youtube.com/" target="_blank">digg</a>
 </footer>
 
-<script src="/js/youtube.js"></script>
+<script src="js/youtube.js"></script>
 
 </body>
 </html>

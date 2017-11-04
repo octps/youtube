@@ -123,7 +123,7 @@ $(function() {
   window.seek1 = function() {
     if (window.pintime1 == null) {
       window.pintime1 = ytPlayer[1].getCurrentTime();
-      $("#break1").html("back [ j ]key");
+      $("#break1").html("back [ f ]key");
       return;
     }
     ytPlayer[1].seekTo(parseFloat(window.pintime1),true);
@@ -141,7 +141,7 @@ $(function() {
   window.seek2 = function() {
     if (window.pintime2 == null) {
       window.pintime2 = ytPlayer[2].getCurrentTime();
-      $("#break2").html("back [ f ]key");
+      $("#break2").html("back [ j ]key");
       return;
     }
     ytPlayer[2].seekTo(parseFloat(window.pintime2),true);
@@ -184,9 +184,9 @@ $(function() {
 
    //全体のコントローラー start stop
   $('#all_start').click(function() {
-            ytPlayer[1].playVideo();
-            ytPlayer[2].playVideo();
-      }
+          ytPlayer[1].playVideo();
+          ytPlayer[2].playVideo();
+        }
   );
 
   $('#all_pouse').click(function() {
@@ -229,7 +229,6 @@ $(function() {
       // console.log("j");
     }
   });
-
 
  });
 
@@ -319,11 +318,15 @@ function onPlayerReady(event) {
 	}
   // プレーヤーの準備ができたとき
   playerReady = true;
+  var me = $("#player1").contents().find('".video-stream.html5-main-video"');
+  console.log(me);
+
 }
 
 function onPlayerStateChange(event) {
    // 現在のプレーヤーの状態を取得
    var ytStatus = event.data;
+
   // 再生終了したとき
  if (ytStatus == YT.PlayerState.ENDED) {
      console.log('再生終了');

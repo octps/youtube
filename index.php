@@ -1,3 +1,8 @@
+<?php
+	ini_set( 'display_errors', 1 );
+	// include_once("./controller/Dlmovie.php");
+	include_once("./controller/Dlaudio.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,6 @@
 <link rel='stylesheet' href='css/siimple/siimple.css' type='text/css' media='all' />
 <link rel='stylesheet' href='css/siimple/siimple-form.css' type='text/css' media='all' />
 
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
@@ -15,7 +19,17 @@
 	<h1>youtube mixer</h1>
 	<p>Everything is on youtube.</p>
 </header>
+
 <div class="main_controller" >
+<div>
+	<div>
+		<form action="/mixer/index.php" method="post">
+			<label class="siimple-label">youtube movie url : <input class="siimple-input" type="text" name="url" value=""></label>
+			<input type="submit" value="submit">
+		</form>
+	</div>
+
+</div>
 	<h2>main controller</h2>
 	<span class="siimple-btn siimple-btn--navy part" id="all_start">start</span>
 	<span class="siimple-btn siimple-btn--navy part" id="all_pouse">pouse</span>

@@ -53,7 +53,8 @@ function onYouTubeIframeAPIReady() {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
                 autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
-                showinfo: 0 // 動画情報を表示しない
+                showinfo: 0, // 動画情報を表示しない
+                playsinline: 1
            }
       }
    );
@@ -72,7 +73,8 @@ function onYouTubeIframeAPIReady() {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
                 autoplay: 0, // 自動再生するかどうか設定
                 controls: 0, // コントロールバーを表示しない
-                showinfo: 0 // 動画情報を表示しない
+                showinfo: 0, // 動画情報を表示しない
+                playsinline: 1
            }
       }
    );
@@ -157,8 +159,6 @@ $(function() {
     $("#clearpin2").html("clear");
   }
 
-
-
    //個別のコントローラー speed
    $('#range1').change(function(e) {
           var val = $(e['currentTarget']).val();
@@ -170,7 +170,6 @@ $(function() {
           ytPlayer[2].setPlaybackRate(val);          
         }
    );
-
 
    //個別のコントローラー volume
   $('#volume1').on( 'input', function (e) {
@@ -238,7 +237,6 @@ $(function() {
     if (e.keyCode == "70") {
       window.clearpin1();
       // console.log("d");
-      // console.log("clear d");
     }
     if (e.keyCode == "74") {
       window.seek2();
@@ -248,7 +246,6 @@ $(function() {
     if (e.keyCode == "75") {
       window.clearpin2();
       // console.log("k");
-      // console.log("clear k");
     }
 
 
@@ -342,8 +339,8 @@ function onPlayerReady(event) {
 	}
   // プレーヤーの準備ができたとき
   playerReady = true;
-  var me = $("#player1").contents().find('".video-stream.html5-main-video"');
-  console.log(me);
+  // var me = $("#player1").contents().find('".video-stream.html5-main-video"');
+  // console.log(me);
 }
 
 function onPlayerStateChange(event) {
